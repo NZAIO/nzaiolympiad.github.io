@@ -1,5 +1,6 @@
 ---
 import config from "@/config/config.json";
+import { withBasePath } from "@/lib/utils/pathPrefix";
 import dateFormat from "@/lib/utils/dateFormat";
 import { plainify } from "@/lib/utils/textConverter";
 import ImageMod from "./ImageMod.astro";
@@ -27,7 +28,7 @@ const { title, image, date } = data.data;
     )
   }
   <h4 class="mb-3">
-    <a href={`/${blog_folder}/${data.id}`}>
+    <a href={withBasePath(`/${blog_folder}/${data.id}`)}>
       {title}
     </a>
   </h4>
@@ -35,7 +36,7 @@ const { title, image, date } = data.data;
     {date && <li class="inline-block">{dateFormat(date)}</li>}
   </ul>
   <p class="mb-6">{plainify(data.body?.slice(0, Number(summary_length)))}</p>
-  <a class="btn btn-outline-primary btn-sm" href={`/${blog_folder}/${data.id}`}>
+  <a class="btn btn-outline-primary btn-sm" href={withBasePath(`/${blog_folder}/${data.id}`)}>
     View edition
   </a>
 </div>

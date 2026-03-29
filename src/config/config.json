@@ -1,8 +1,8 @@
 {
   "site": {
     "title": "New Zealand AI Olympiad (NZAIO)",
-    "base_url": "https://nzaiolympiad.github.io",
-    "base_path": "/",
+    "base_url": "https://nzaio.github.io/nzaiolympiad.github.io",
+    "base_path": "/nzaiolympiad.github.io",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
     "logo": "/images/nzaio/logo.png",
