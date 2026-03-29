@@ -36,8 +36,25 @@ const { title, meta_title, description, image, noindex, canonical } =
 ---
 
 <!doctype html>
-<html lang="en">
+<html
+  lang="en"
+  class={config.settings.default_theme === "dark" ? "dark" : undefined}
+>
   <head>
+    <script is:inline>
+      (() => {
+        const defaultTheme = {
+          dark: "dark",
+          light: "light",
+          system: window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light",
+        }[${JSON.stringify(config.settings.default_theme)}];
+        const savedTheme = localStorage.getItem("theme");
+        const theme = savedTheme || defaultTheme;
+        document.documentElement.classList.toggle("dark", theme === "dark");
+      })();
+    </script>
     <!-- google tag manager -->
     {
       config.google_tag_manager.enable && (

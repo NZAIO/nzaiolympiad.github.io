@@ -45,9 +45,11 @@ const { banner, features } = homepage.data;
             <div class="col-12">
               <ImageMod
                 src={banner.image}
-                height={380}
-                width={1200}
+                height={520}
+                width={1800}
                 alt="banner"
+                fit="cover"
+                loading="eager"
                 format="webp"
               />
             </div>
@@ -69,9 +71,10 @@ const { banner, features } = homepage.data;
             >
               <ImageMod
                 src={feature.image}
-                height={480}
-                width={520}
+                height={720}
+                width={1200}
                 alt={feature.title}
+                fit="cover"
                 format="webp"
               />
             </div>

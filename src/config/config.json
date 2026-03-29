@@ -1,42 +1,42 @@
 {
   "site": {
-    "title": "Astroplate",
-    "base_url": "https://astroplate.netlify.app",
+    "title": "New Zealand AI Olympiad (NZAIO)",
+    "base_url": "https://nzaiolympiad.github.io",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
-    "logo": "/images/logo.png",
-    "logo_darkmode": "/images/logo-darkmode.png",
-    "logo_width": "150",
-    "logo_height": "30",
-    "logo_text": "Astroplate"
+    "logo": "/images/nzaio/logo.png",
+    "logo_darkmode": "/images/nzaio/logo-white.png",
+    "logo_width": "56",
+    "logo_height": "56",
+    "logo_text": "New Zealand AI Olympiad (NZAIO)"
   },
 
   "settings": {
-    "search": true,
+    "search": false,
     "sticky_header": true,
     "theme_switcher": true,
-    "default_theme": "system",
-    "pagination": 2,
+    "default_theme": "dark",
+    "pagination": 6,
     "summary_length": 200,
     "blog_folder": "blog"
   },
 
   "announcement": {
-    "enable": true,
-    "content": "<span class='text-center block'>♥️ Loving Astroplate? <a class='underline' href='https://github.com/zeon-studio/astroplate' target='_blank' rel='noopener'>Please ⭐️ on Github</a></span>",
+    "enable": false,
+    "content": "",
     "expire_days": 7
   },
 
   "params": {
     "contact_form_action": "#",
-    "copyright": "Designed And Developed by [Zeon Studio](https://zeon.studio)"
+    "copyright": "© New Zealand AI Olympiad (NZAIO)"
   },
 
   "navigation_button": {
     "enable": true,
-    "label": "Github",
-    "link": "https://github.com/zeon-studio/astroplate"
+    "label": "Get involved",
+    "link": "/support-us"
   },
 
   "google_tag_manager": {
@@ -45,14 +45,14 @@
   },
 
   "disqus": {
-    "enable": true,
-    "shortname": "themefisher-template",
+    "enable": false,
+    "shortname": "",
     "settings": {}
   },
 
   "metadata": {
-    "meta_author": "zeon.studio",
+    "meta_author": "New Zealand AI Olympiad (NZAIO)",
     "meta_image": "/images/og-image.png",
-    "meta_description": "astro and tailwind boilerplate"
+    "meta_description": "New Zealand AI Olympiad prepares and supports students representing New Zealand in international AI Olympiads."
   }
 }

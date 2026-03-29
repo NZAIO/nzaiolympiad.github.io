@@ -1,10 +1,10 @@
 ---
 enable: true
-title: "Ready to build your next project with Astro?"
-image: "/images/call-to-action.png"
-description: "Experience the future of web development with Astroplate and Astro. Build lightning-fast static sites with ease and flexibility."
+title: "Support the next New Zealand team"
+image: "/images/nzaio/logo.png"
+description: "NZAIO is creating opportunities for students to train, compete, and represent New Zealand internationally. If you would like to help through sponsorship, partnership, or funding, we would be glad to hear from you."
 button:
   enable: true
-  label: "Fork Deploy and Edit Online 🚀"
-  link: "https://app.sitepins.com/new/clone?name=Astroplate&repository=https://github.com/zeon-studio/astroplate"
+  label: "Support Us"
+  link: "/support-us"
 ---

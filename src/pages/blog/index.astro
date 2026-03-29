@@ -4,10 +4,8 @@ import Pagination from "@/components/Pagination.astro";
 import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
 import { getListPage, getSinglePage } from "@/lib/contentParser.astro";
-import { getAllTaxonomy, getTaxonomy } from "@/lib/taxonomyParser.astro";
 import { sortByDate } from "@/lib/utils/sortFunctions";
 import PageHeader from "@/partials/PageHeader.astro";
-import PostSidebar from "@/partials/PostSidebar.astro";
 
 const BLOG_FOLDER = "blog";
 
@@ -16,9 +14,6 @@ if (postIndex.data.draft) {
   return Astro.redirect("/404");
 }
 const posts = await getSinglePage(BLOG_FOLDER);
-const allCategories = await getAllTaxonomy(BLOG_FOLDER, "categories");
-const categories = await getTaxonomy(BLOG_FOLDER, "categories");
-const tags = await getTaxonomy(BLOG_FOLDER, "tags");
 const sortedPosts = sortByDate(posts);
 const totalPages: number = Math.ceil(posts.length / config.settings.pagination);
 const currentPosts = sortedPosts.slice(0, config.settings.pagination);
@@ -33,13 +28,17 @@ const currentPosts = sortedPosts.slice(0, config.settings.pagination);
   <PageHeader title={postIndex?.data.title} />
   <section class="section">
     <div class="container">
-      <div class="row gx-5">
-        <!-- blog posts -->
-        <div class="lg:col-8">
-          <div class="row">
+      <div class="row justify-center">
+        <div class="lg:col-10">
+          <div class="mb-12 text-center">
+            <p class="mx-auto max-w-3xl">
+              Editions collect the key moments in NZAIO&apos;s journey, from national training and team selection to international participation and results.
+            </p>
+          </div>
+          <div class="row justify-center">
             {
               currentPosts.map((post) => (
-                <div class="mb-14 md:col-6">
+                <div class="mb-14 md:col-8">
                   <BlogCard data={post} />
                 </div>
               ))
@@ -51,13 +50,6 @@ const currentPosts = sortedPosts.slice(0, config.settings.pagination);
             totalPages={totalPages}
           />
         </div>
-
-        <!-- sidebar -->
-        <PostSidebar
-          categories={categories}
-          tags={tags}
-          allCategories={allCategories}
-        />
       </div>
     </div>
   </section>

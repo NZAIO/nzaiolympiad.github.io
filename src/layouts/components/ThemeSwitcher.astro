@@ -44,48 +44,47 @@ const { className }: { className?: string } = Astro.props;
   )
 }
 
-<script>
-  import { settings } from "@/config/config.json";
-  const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
+<script is:inline define:vars={{ defaultTheme: config.settings.default_theme }}>
+  const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-  matchMedia.addEventListener("change", () =>
-    toggleTheme(document.querySelectorAll("[data-theme-switcher]"))
-  );
-
-  function toggleTheme(themeSwitch: NodeListOf<Element>) {
-    const defaulTheme =
-      settings.default_theme === "system"
-        ? matchMedia.matches
-          ? "dark"
-          : "light"
-        : settings.default_theme;
-    const currentTheme = localStorage.getItem("theme") || defaulTheme;
-    const isDarkTheme = currentTheme === "dark";
-    themeSwitch.forEach((sw: any) => (sw.checked = isDarkTheme));
-    document.documentElement.classList.toggle("dark", isDarkTheme);
+  function resolveTheme() {
+    if (defaultTheme === "system") {
+      return mediaQuery.matches ? "dark" : "light";
+    }
+    return defaultTheme;
   }
 
-  const setDarkMode = () => {
-    const themeSwitch = document.querySelectorAll("[data-theme-switcher]");
-    toggleTheme(themeSwitch);
-    themeSwitch.forEach((sw) => {
-      sw.addEventListener("click", function () {
-        const defaulTheme =
-          settings.default_theme === "system"
-            ? matchMedia.matches
-              ? "dark"
-              : "light"
-            : settings.default_theme;
-        const currentTheme = localStorage.getItem("theme") || defaulTheme;
-        const newTheme = currentTheme === "light" ? "dark" : "light";
-        localStorage.setItem("theme", newTheme);
-        toggleTheme(themeSwitch);
+  function applyTheme(theme) {
+    const isDark = theme === "dark";
+    document.documentElement.classList.toggle("dark", isDark);
+    document
+      .querySelectorAll("[data-theme-switcher]")
+      .forEach((element) => (element.checked = isDark));
+  }
+
+  function syncTheme() {
+    applyTheme(localStorage.getItem("theme") || resolveTheme());
+  }
+
+  function initializeThemeSwitchers() {
+    syncTheme();
+    document.querySelectorAll("[data-theme-switcher]").forEach((element) => {
+      if (element.dataset.boundThemeSwitcher === "true") return;
+      element.dataset.boundThemeSwitcher = "true";
+      element.addEventListener("change", () => {
+        const nextTheme = element.checked ? "dark" : "light";
+        localStorage.setItem("theme", nextTheme);
+        applyTheme(nextTheme);
       });
     });
-  };
+  }
 
-  // Runs on initial navigation
-  setDarkMode();
-  // Runs on view transitions navigation
-  document.addEventListener("astro:after-swap", setDarkMode);
+  mediaQuery.addEventListener("change", () => {
+    if (!localStorage.getItem("theme")) {
+      syncTheme();
+    }
+  });
+
+  initializeThemeSwitchers();
+  document.addEventListener("astro:after-swap", initializeThemeSwitchers);
 </script>

@@ -1,53 +1,51 @@
 ---
 # Banner
 banner:
-  title: "The Ultimate Starter Template You Need To Start Your Astro Project"
-  content: "Astroplate is a free starter template built with Astro and TailwindCSS, providing everything you need to jumpstart your Astro project and save valuable time."
-  image: "/images/banner.png"
+  title: "New Zealand AI Olympiad (NZAIO)"
+  content: "The New Zealand Artificial Intelligence Olympiad (NZAIO) is a non-profit national organisation that provides leadership and inspiration in artificial intelligence for gifted and talented students within New Zealand's schooling system and beyond. We deliver training and support for academic competitions in artificial intelligence, machine learning, and computational problem-solving, helping young people grow through regional, national, and international competition."
+  image: "/images/editions/2026-camp-group.jpeg"
   button:
     enable: true
-    label: "Fork Deploy and Edit Online 🚀"
-    link: "https://app.sitepins.com/new/clone?name=Astroplate&repository=https://github.com/zeon-studio/astroplate/"
+    label: "Explore the 2026 edition"
+    link: "/blog"
 
 # Features
 features:
-  - title: "What's Included in Astroplate"
-    image: "/images/service-1.png"
-    content: "Astroplate is a comprehensive starter template that includes everything you need to get started with your Astro project. What's Included in Astroplate"
+  - title: "National training and support"
+    image: "/images/editions/2026-camp-heitor-funny.jpeg"
+    content: "NZAIO builds a pathway for students who want to go beyond using AI and learn how to understand, create, and apply it at a high level. Our programme brings together talented students, academic mentors, and competition-focused preparation."
     bulletpoints:
-      - "10+ Pre-build pages"
-      - "95+ Google Pagespeed Score"
-      - "Build with Astro and TailwindCSS for easy and customizable styling"
-      - "Fully responsive on all devices"
-      - "SEO-optimized for better search engine rankings"
-      - "**Open-source and free** for personal and commercial use"
-    button:
-      enable: false
-      label: "Get Started Now"
-      link: "#"
-
-  - title: "Discover the Key Features Of Astro"
-    image: "/images/service-2.png"
-    content: "Astro is an all-in-one web framework for building fast, content-focused websites. It offers a range of exciting features for developers and website creators. Some of the key features are:"
-    bulletpoints:
-      - "Zero JS, by default: No JavaScript runtime overhead to slow you down."
-      - "Customizable: Tailwind, MDX, and 100+ other integrations to choose from."
-      - "UI-agnostic: Supports React, Preact, Svelte, Vue, Solid, Lit and more."
-    button:
-      enable: true
-      label: "Get Started Now"
-      link: "https://github.com/zeon-studio/astroplate"
-
-  - title: "The Top Reasons to Choose Astro for Your Next Project"
-    image: "/images/service-3.png"
-    content: "With Astro, you can build modern and content-focused websites without sacrificing performance or ease of use."
-    bulletpoints:
-      - "Instantly load static sites for better user experience and SEO."
-      - "Intuitive syntax and support for popular frameworks make learning and using Astro a breeze."
-      - "Use any front-end library or framework, or build custom components, for any project size."
-      - "Built on cutting-edge technology to keep your projects up-to-date with the latest web standards."
+      - "AI olympiad preparation for students across New Zealand"
+      - "Training camps, theory, and practical machine learning work"
+      - "Support from researchers, educators, and volunteer mentors"
+      - "A growing national pathway into international competition"
     button:
       enable: false
       label: ""
-      link: ""
+      link: "#"
+
+  - title: "International participation"
+    image: "/images/editions/2026-stage.jpeg"
+    content: "New Zealand has already been represented at the International AI Olympiad (IAIO) in Slovenia, where students competed on the world stage and delivered outstanding results. These opportunities show what is possible when young people are given serious support in AI problem-solving."
+    bulletpoints:
+      - "Gold and silver medals for the New Zealand team in 2026"
+      - "Honourable mention and national media recognition"
+      - "International visibility through IAIO and the global AI olympiad community"
+    button:
+      enable: true
+      label: "Visit IAIO"
+      link: "https://iaio-official.org/"
+
+  - title: "Get involved"
+    image: "/images/editions/2026-camp-work.jpeg"
+    content: "NZAIO is volunteer-led and built through collaboration. If you or your organisation would like to support the development of high-level AI talent in New Zealand through sponsorship, partnership, or funding, we would welcome the conversation."
+    bulletpoints:
+      - "Support students preparing for future international competitions"
+      - "Partner with a focused national initiative in AI education"
+      - "Follow our progress on LinkedIn"
+      - "Reach out at nzaiolympiads25@gmail.com"
+    button:
+      enable: true
+      label: "Support Us"
+      link: "/support-us"
 ---
